@@ -13,6 +13,7 @@ Please visit our upgrading instructions for complete details on upgrading:
 ## Help & Support
 
 If you get stuck or need any help we offer many ways to help you out. 
+
   * User Guide - http://68kb.com/user_guide/
   * Knowledge Base - http://68kb.com/knowledge-base/
   * Support Forums - http://68kb.com/support/
