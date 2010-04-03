@@ -1,0 +1,6 @@
+.DS_Store
+upload/includes/config.php
+upload/uploads/*
+!upload/uploads/index.html
+upload/includes/system/logs/*
+!upload/includes/system/logs/index.html

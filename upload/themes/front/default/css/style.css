@@ -1,0 +1,271 @@
+body {
+	line-height: 1;
+	color: #696969;
+	background: #fff;
+	font: 13px/20px Tahoma, Arial, Helvetica, sans-serif;
+	height: 100%;
+	margin:0;
+}
+html {
+	overflow-y: scroll;
+}
+html, body {
+	height: 100%;
+}
+a, a:visited { color: #237fa1; text-decoration: none; }
+
+a:hover { color: #c00; text-decoration: underline; }
+
+#content_bg {
+	background:transparent url(../images/content_bg.png) repeat-x scroll 0 -116px;
+	height:100%;
+	padding-top:15px;
+	width:100%;
+}
+#header h1 {
+	color:#FFFFFF;
+	float:left;
+	font-size:30px;
+	line-height:35px;
+	padding:18px 0 0;
+	width:400px;
+}
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+	font-family: Helvetica, Arial, sans-serif;
+	font-weight: bold;
+	margin: 5px 0 5px 0;
+	color: #000;
+}
+h1 {
+	font-size: 30px;
+	line-height: 35px;
+	color: #000;
+	margin: 0;
+}
+h2 {
+	font-size: 23px;
+	line-height: 28px;
+}
+h3 {
+	font-size: 19px;
+	line-height: 24px;
+}
+h4 {
+	font-size: 17px;
+	line-height: 22px;
+}
+h5 {
+	font-size: 15px;
+	line-height: 20px;
+}
+h6 {
+	font-size: 14px;
+	line-height: 19px;
+}
+#header {
+	height: 100px;
+}
+.meta {
+	color:#777777;
+	font-size:12px;
+	margin-bottom:1px;
+}
+.meta p {
+	margin: 0;
+}
+code, pre {
+	background:#EEEEEE none repeat scroll 0 0;
+	border:1px solid #DDDDDD;
+	clear:both;
+	font-family:Consolas,"Andale Mono",Courier,"Courier New",monospace;
+	font-size:0.84615em;
+	margin:0 0 1.81818em;
+	overflow:auto;
+	padding:0.81818em;
+}
+
+ul { margin: 10px 0 10px 5px; padding-left: 0;}
+li {
+	margin: 0 0 0px 5px;
+}
+ol li {margin: 0;}
+#content {
+	padding: 0px;
+}
+.search {
+	background:#F6F6F6 none repeat scroll 0 0;
+	display:block;
+	margin-bottom:18px;
+	padding:15px;
+}
+.search label {
+	font-weight: bold;
+	margin: 0 10px 0 0;
+}
+.search .search_input {
+	border:1px solid #999999;
+	padding:2px;
+	width:350px;
+}
+h2.pop {
+	border-bottom:1px solid #CACACA;
+	padding-bottom:4px;
+	font-size: 20px;
+	line-height: 23px;
+}
+ul.articles {
+	list-style-image:none;
+	list-style-position:outside;
+	list-style-type:none;
+	margin: 0;
+}
+ul.articles li {
+	line-height:18px;
+	padding:0 0 5px 20px;
+	margin-left: 0;
+	margin: 0;
+	background: url(../images/page_white.png) no-repeat 0 1.6px;
+}
+#all h2 {
+	border-bottom:1px solid #CACACA;
+	padding-bottom:3px;
+	margin: 10px 0;
+	font-size: 18px;
+	line-height: 23px;
+}
+#all h2 a {
+	color: #666;
+	text-decoration: none;
+}
+#all p {
+	margin: 5px 0;
+}
+.tborder {
+	margin: 0;
+}
+dt {
+	font-weight:bold;
+}
+dd {
+	margin:0 0 0 1.53846em;
+}
+#sidebar ul {
+	list-style-image:none;
+	list-style-position:outside;
+	list-style-type:none;
+	margin:0;
+	padding:0;
+}
+#sidebar ul li {
+	margin:0 0 0.75em;
+}
+#sidebar h2 {
+	border-bottom:1px solid #DDDDDD;
+	border-top:0 none;
+	color:#111111;
+	font-size:0.83333em;
+	letter-spacing:2px;
+	line-height:1.9em;
+	margin:0 0 0.9em;
+	padding:0;
+	text-transform:uppercase;
+}
+
+#tooltip{
+	position:absolute;
+	border:1px solid #333;
+	background:#f7f5d1;
+	padding:2px 5px;
+	color:#333;
+	display:none;
+}
+
+input, select, textarea {
+	-moz-border-radius-bottomleft:3px;
+	-moz-border-radius-bottomright:3px;
+	-moz-border-radius-topleft:3px;
+	-moz-border-radius-topright:3px;
+	border:1px solid #999999;
+	font-size:12px;
+	line-height:14px;
+	margin:0;
+	padding:2px;
+}
+textarea {
+	width: 80%;
+}
+input#submit:hover, input.submit:hover {
+	background-color:#DDDDDD;
+	color:#1F476F;
+}
+.commentarea {
+	margin: 20px 0 0;
+}
+.commentarea label {
+	padding: 0 0 0 10px;
+}
+.commentlist {
+	margin-bottom:25px;
+}
+.comment {
+	background:#F0F0F0 none repeat scroll 0 0;
+	border:1px solid #CCCCCC;
+	height:100%;
+	margin:0 0 20px;
+	overflow:hidden;
+	padding:19px 19px 0;
+}
+.clearfix {
+	display:block;
+}
+.pic {
+	background:#EBEBEB none repeat scroll 0 0;
+	border:1px solid #CCCCCC;
+	float:left;
+	height:40px;
+	margin:0 15px 5px 0;
+	padding:4px;
+	width:40px;
+}
+.thecomment {
+	float:left;
+	width:85%;
+}
+.comment .name, .author {
+	font-size:14px;
+}
+.time {
+	color:#878787;
+}
+.comment .text {
+	line-height:19px;
+}
+.commentarea p {
+	margin-bottom:10px;
+}
+
+#rating {
+	padding: 20px 0;
+}
+#rating h3 {
+	border-bottom:1px solid #CCCCCC;
+	color:#000000;
+	font-size:10pt;
+	margin:20px 0 10px;
+	padding:5px 0 0;
+	text-align:left;
+}
+
+a img {
+	border: none;
+}
+.error{
+	background: #FFBABA;
+	color: #D8000C;
+	border: 1px solid #D8000C;
+}
+.error p {
+	padding: 3px 1em 3px 1em;
+	margin: 0;
+}

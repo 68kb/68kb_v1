@@ -1,0 +1,679 @@
+/* @$Revision: 81 $ */
+body,td,th {
+	color: #000000;
+}
+body {
+	background-color: #CACACA;
+}
+body, td {
+	font-family:"lucida grande",arial,helvetica,sans-serif;
+	font-size:13px;
+	line-height:1.5;
+}
+
+#header{
+	background: url(../images/logo.gif) no-repeat;
+	width: 900px;
+	height: 65px;
+}
+#header p{
+	float: right;
+	text-align: right;
+	padding: 0;
+}
+/* ######## Wrapper ######### */
+#wrapper{
+	text-align:left;
+	margin: 0px auto;
+	border: 1px solid #000;
+	width: 960px;
+	background-color: #FFF;
+}
+/* ######## TOP MENU ######### */
+div#topmenu {
+	background: url(../images/nav.jpg) repeat-x;
+	height: 21px;
+	border-bottom: 1px solid #000;
+}
+#menu a {
+	display: block;
+	font-family: Verdana,Tahoma, Helvetica, sans-serif;
+	float: left;
+	line-height: 21px;
+	padding: 0px 25px;
+	text-decoration:none;
+	font-size: 11px;
+	font-weight:bold;
+	color:#fff;
+	border-right: 1px solid #000;
+}
+#menu a.last{
+	border: 0px;
+}
+
+#menu a:hover {
+	background:#999;
+}
+#menu .activeMenuItem{
+		/* Border options */
+		border-bottom: 1px solid #6C9CE8;
+		background-color: #6C9CE8;	/* Background color */
+		cursor:pointer;	/* Cursor like a hand when the user moves the mouse over the menu item */
+}
+/* ######## SUB MENU ######### */
+#submenu{
+	background-color: #6C9CE8;
+	padding-left: 1px; 
+	padding-top: 5px; 
+	padding-bottom: 5px; 
+	height: 10px;
+	border-bottom: 1px solid #747474;
+	width:100%;
+}
+#submenu a {
+	display: block;
+	font-family: Verdana,Tahoma, Helvetica, sans-serif;
+	float: left;
+	line-height: 12px;
+	padding: 0px 25px;
+	text-decoration:none;
+	font-size: 10px;
+	color:#fff;
+	border-right: 1px solid #fff;
+}
+
+#submenu a.left{
+	border-left: 1px solid #fff;
+}
+#submenu a.hover {
+	background:#333;
+}
+#submenu div{
+	white-space:nowrap;	/* Don't change this option */
+}
+/* ######## LINK STYLES ######### */
+a:link{
+	color: #1F476F;
+	text-decoration: none;
+}
+a:visited{
+	color: #1F476F;
+	text-decoration: none;
+}
+a:hover{
+	color: #5487BF;
+}
+a:active {
+	color: #FF0000;
+}
+#search {
+	padding: 5px 0;
+}
+#search input, #search select, input, select {
+	-moz-border-radius-bottomleft:3px;
+	-moz-border-radius-bottomright:3px;
+	-moz-border-radius-topleft:3px;
+	-moz-border-radius-topright:3px;
+	border:1px solid #999999;
+	font-size:12px;
+	line-height:14px;
+	margin:0;
+	padding:2px;
+}
+input#submit:hover, input.submit:hover {
+	background-color:#DDDDDD;
+	color:#1F476F;
+}
+#search2 select {
+	padding: 1px 3px;
+}
+.addnew:link, .addnew:visited, .addnew:active {
+	background:transparent url(../images/add.png) no-repeat scroll left center;
+	color:#B86464;
+	font-size:11px;
+	line-height:15px;
+	margin:19px 0 0 15px;
+	padding:2px 0 0 18px;	
+}
+
+/* Main Table
+ * This class handles the appearence of the
+ * the main tables used with 68classifieds
+ *
+*/
+
+table.main {
+	border:0 none;
+	border-collapse:collapse;
+	border-spacing:0;
+}
+.main th {
+	border:1px solid #DBDBDB;
+	line-height:26px;
+	padding:0 12px;
+	text-align:left;
+	background:#FFFFFF none repeat scroll 0 0;
+	font-size:13px;
+	font-weight:bold;
+	color:#1F476F;
+}
+.main th a:link, .main th a:visited {
+	background-position:right center;
+	background-repeat:no-repeat;
+	color:#1F476F;
+	display:inline-block;
+	padding:0 16px 0 0;
+}
+.main td {
+	border:1px solid #DBDBDB;
+	padding:5px 12px;
+	text-align:left;
+	font-size: 11px;
+}
+.asc {
+	background:transparent url(../images/asc.gif) no-repeat scroll right center;
+}
+.desc {
+	background:transparent url(../images/desc.gif) no-repeat scroll right center;
+}
+tr.first td {
+	background:#FEFEFE url(../images/td_bg1.gif) repeat-x scroll 0 0;
+}
+tr.second td {
+	background:#F2F2F2 url(../images/td_bg2.gif) repeat-x scroll 0 0;
+}
+.main .title {
+	font-weight: bold;
+	font-size: 12px;
+}
+.main .small {
+	font-size: 10px;
+	padding: 5px 0;
+}
+.main td.categories {
+	font-size: 12px;
+}
+.main td.row_small {
+	width: 4px;
+}
+/* ######## CONTENT ######### */
+#content{
+	padding: 10px;
+}
+.wrap {
+	background: #fff;
+	border: 1px solid #ccc;
+	clear: both;
+	padding: .5em;
+}
+th{
+	background:url(../images/th.gif) repeat-x;
+	color: #FFF;
+	height: 21px;
+	padding: 0px;
+}
+th a:link{
+	color: #fff;
+	text-decoration: none;
+}
+th a:visited{
+	color: #fff;
+	text-decoration: none;
+}
+/* ######## HEADINGS ######### */
+h1 {
+	margin-left: 0;
+	color: #B4D0FB;
+	margin-bottom: 0px;
+	font: normal 30px/5px serif;
+}
+h2{
+	margin-top: 0px;
+	margin-bottom: 10px;
+	color: #333;
+	font-size:26px;
+	font: normal "Trebuchet MS", Arial, sans-serif;
+	border-bottom: 1px solid #ccc;
+}
+h2 span{	
+	padding-left: 10px;
+}
+#news {
+	background: #eee;
+	border: 1px solid #c5c5c5;
+	font-size: 90%;
+	margin-bottom: .5em;
+	margin-left: 1em;
+	margin-top: 0px;
+	padding: 1em;
+}
+#news h2, fieldset legend a {
+	border-bottom: none;
+	color: #333333;
+}
+/* ============ FORMS =========== */
+/*
+input,select
+{
+	background-color: #FFFFFF;
+	color: #000000;
+	font-family: Verdana, Tahoma;
+	font-size: 10px;
+	border: 1px solid #666666;
+}
+*/
+input:focus,textarea:focus, select:focus { 
+	background-color: #DEEFFF;
+	border-color: #758a9e;
+}
+textarea {
+	border: 1px solid #999999;
+	font-size: 14px;
+	color: #111;
+	background-color: #fafafa;
+}
+.imageform { border: 1px SOLID #CCCCCC; background-color: #EEE;}
+
+#form input.inputtext {
+	width: 80%;
+	padding: 2px 5px;
+	border: 1px solid #CCCCCC;
+	font-size: 14px;
+	color: #111;
+}
+#form select.inputselect {
+	border: 1px solid #CCCCCC;
+	font-size: 14px;
+	color: #111;
+}
+#form textarea.inputtext {
+	width: 95%;
+	padding: 2px 5px;
+	border: 1px solid #CCCCCC;
+	font-size: 14px;
+	color: #111;
+}
+#form label {
+	display: block;
+	padding: 5px 0 0 0;
+}
+
+#form .save {
+	border: 3px double #999;	
+	border-left-color: #ccc; 
+	border-top-color: #ccc; 
+	color: #333; 
+	padding: 3px;
+	font-size: 14px;
+	background-color: #eee;
+}
+#upload {
+	border-style: none;
+	padding: 0;
+	margin-bottom: 16px;
+	height: 18em;
+	width: 100%;
+}
+/* ====== MODULES ====== */
+.modules{
+	border: 1px solid #CCC;
+	-moz-border-radius-bottomleft:3px;
+	-moz-border-radius-bottomright:3px;
+	-moz-border-radius-topleft:3px;
+	-moz-border-radius-topright:3px;
+	font-size:12px;
+	line-height:14px;
+	margin:0;
+	padding:2px;
+}
+.moduleslinks{
+	background-image: url(../images/module_tabs_bg.gif);
+	color: #747474;
+	margin: 5px;
+}
+.moduleslinks a{
+	color: #747474;
+	text-decoration: none;
+}
+.moduleslinks a:hover{
+	color: #747474;
+	text-decoration: none;
+}
+.moduleslinks .active {
+	color: #000;
+}
+#rssnews p {
+	font-size: 11px;
+}
+.stats{
+	background-color: #FFFFEC;
+	border: 1px solid #FFF4bc;
+}
+.total{
+	background-color: #F5F5DC;
+}
+/* row1 & row2
+ * This section handles alternating rows
+ *
+*/
+.row1{
+	background-color:#F1F1F1;
+	padding: 5px;
+	margin: 5px;
+}
+.row2{
+    background-color:#FFF;
+	padding: 5px;
+	margin: 5px;
+}
+.formerror{
+	background: #FFF7C0;
+	padding: 5px;
+	margin: 5px;
+}
+.clearit {
+	clear: both;
+	display: block;
+	background-color:#FFF;
+	width: 200px;
+}
+/* ======= TOGGLE TABS ======= */
+/* http://www.exploding-boy.com/2005/12/15/free-css-navigation-designs/ */
+.clear{
+	clear: both;
+}
+#tabs{
+	float:left;
+	width:100%;
+	font-size:93%;
+	line-height:normal;
+	background:#FFF;
+	/*border-bottom:1px solid #24618E;*/
+	font-weight:bold;
+	clear: both;
+}
+#tabs ul {
+	margin:0;
+	padding:0px 10px 0 50px;
+	list-style:none;
+}
+#tabs li {
+	display:inline;
+	margin:0;
+	padding:0;
+}
+#tabs a {
+	float:left;
+	background:url("../images/tableftJ.gif") no-repeat left top;
+	margin:0;
+	padding:0 0 0 5px;
+	text-decoration:none;
+}
+#tabs a span {
+	float:left;
+	display:block;
+	background:url("../images/tabrightJ.gif") no-repeat right top;
+	padding:5px 15px 4px 6px;
+	color:#666;
+}
+/* Commented Backslash Hack hides rule from IE5-Mac \*/
+#tabs a span {float:none;}
+/* End IE5-Mac hack */
+#tabs a:hover span{
+	color:#FFF;
+}
+#tabs a:hover, #tabs #current a, #tabs a:visited#current, #tabs a.active{
+	background-position:0% -42px;
+	color:#FFF;
+}
+#tabs a:hover span, #tabs #current span, #tabs .active span {
+	background-position:100% -42px;
+	color:#FFF;
+}
+option.active {
+	background: #BEB;
+}
+option.inactive {
+	background: #FFFF99;
+}
+option.notcompleted {
+	background: #FF5959;
+	color: #FFF;
+}
+option.pendingpayment{
+	background: #BEBBEB;
+	color: #000;
+}
+option.cancelled{
+	background: #BCBC7A;
+	color: #000;
+}
+span.active {
+	background: #BEB;
+	text-align: center;
+	padding: 3px;
+	display: block;
+}
+span.inactive{
+	text-align: center;
+	padding: 3px;
+	display: block;
+}
+span.spam {
+	background: #FF5959;
+	color: #FFF;
+	text-align: center;
+	padding: 3px;
+	display: block;
+}
+span.pendingpayment{
+	background: #BEBBEB;
+	color: #FFF;
+	text-align: center;
+	padding: 3px;
+	display: block;
+}
+span.cancelled{
+	background: #BCBC7A;
+	color: #FFF;
+	text-align: center;
+	padding: 3px;
+	display: block;
+}
+span.expired {
+	background: #000;
+	color: #FFF;
+	text-align: center;
+	padding: 3px;
+	display: block;
+}
+/* FieldSets */
+fieldset { margin-bottom: 6px; border: 1px solid #ccc; padding: 4px}
+fieldset.newsletter{ background-color: #FFF; margin-bottom: 6px; border: 1px solid #999; padding: 6px}
+legend
+{
+	color: #000;
+	font-weight: bold;
+}
+
+/* Pagination
+ * This class handles the appearence of the
+ * previous and next section
+ *
+*/
+.pageNav td { padding: 2px 4px 2px 4px; }
+.pageNav a { text-decoration: none; }
+
+.pagination{
+	text-align: right;
+	background-color: #CFCFCF;
+	color: #333333;
+}
+.paginationNum{
+	background-color: #F6F6F6;
+	color: #333333;
+}
+.navigationBack{
+	background-color: #5F81AC;
+	color: #FFFFFF;
+	font: bold 11px tahoma, verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+	padding: 3px 6px 3px 6px;
+	white-space: nowrap;
+}
+.navigation{
+	font: x-small verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+}
+.letter{
+	border: 1px solid #5487BF;
+	padding: 3px;
+}  
+
+.error{
+	background: #FFBABA;
+	color: #D8000C;
+	border: 1px solid #D8000C;
+	margin: 1em 5% 10px;
+}
+.error p {
+	background: #FFBABA url(../images/cross.png) no-repeat 1em ;
+	padding: 3px 1em 3px 3em;
+	margin: 0;
+}
+.updated {
+	background: #E8EFF5 url(../images/check.png) no-repeat 1em ;
+	border: 1px solid #2580B2;
+	margin: 1em 5% 10px;
+	padding: 0 1em 0 3em;
+}
+.warning {
+	background: #E8EFF5 url(../images/warning.png) no-repeat 1em ;
+	border: 1px solid #2580B2;
+	margin: 1em 5% 10px;
+	padding: 3px 1em 3px 3em;
+}
+.options,
+.options a {
+	margin: 7px 0 auto;
+	font-size: 1em;
+	text-align: center;
+	}
+.addnew {
+	background: url('../images/page_add.png') left top no-repeat;
+	padding: 0px 0 7px 20px;
+	margin-left: 10px;
+	height: 18px;
+}
+blockquote {
+	margin: 10px 0;
+	padding: 5px;
+	color: #666;
+	border:1px inset;
+	}
+#loginwrapper{
+	width: 450px;
+	text-align:left;
+	margin: 0px auto;
+	border: 1px solid #000;
+	background-color: #FFF;
+}
+#footer{
+	text-align:center;
+	color: #000;
+}
+
+#templates h4 {
+	border-bottom: 1px solid #ccc;
+	font-size: 16px;
+	margin: 1em 0 0;
+}
+ .preview{
+	margin: 0px 10px 3px 0px; padding: 2px; border: 1px #cccbbc solid;
+}
+#tooltip{
+	position:absolute;
+	border:1px solid #333;
+	background:#f7f5d1;
+	padding:2px 5px;
+	color:#333;
+	width: 300px;
+	display:none;
+}
+
+/** Templates **/
+#current-theme {
+	margin-top: 1em;
+}
+
+#current-theme a {
+	border-bottom: none;
+}
+
+#current-theme h3 {
+	font-size: 17px;
+	font-weight: normal;
+	margin: 0;
+}
+
+#current-theme .description {
+	margin-top: 5px;
+}
+
+#current-theme img.current {
+	float: left;
+	border: 1px solid #666;
+	margin-right: 1em;
+	margin-bottom: 1.5em;
+	width: 150px;
+}
+
+.available_box {
+	float: left;
+	display: inline;
+	height:200px;
+	margin:0 5px 5px 5px;
+	padding:5px;
+	text-align:center;
+}
+.available_box_heading {
+	font-size:14px;
+	font-weight:700;
+	padding-bottom:5px;
+}
+.available_box img {
+	width:200px;
+}
+.available_box p {
+	margin: 0;
+	padding: 0;
+}
+#theme h3 {
+	border-bottom:1px solid #DADADA;
+	clear:both;
+	color:#666666;
+	font-size:24px;
+	margin:0;
+	padding:0 0 3px;
+}
+.gravatar {
+	float: left;
+	margin: 3px 10px 0 0;
+}
+.submitted{
+	color:#777777;
+}
+td br {
+	line-height:1px;
+}
+
+/* Tagging */
+span.tagMatches {
+	margin-left: 10px;
+}
+  
+span.tagMatches span {
+	padding: 2px;
+	margin-right: 4px;
+	background-color: #0000AB;
+	color: #fff;
+	cursor: pointer;
+}
