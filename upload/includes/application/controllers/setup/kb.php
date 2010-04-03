@@ -36,7 +36,7 @@ class Kb extends Controller
 	function __construct()
 	{
 		parent::__construct();
-		define('KB_VERSION', 'v1.0.0rc3');
+		define('KB_VERSION', 'v1.0.0rc4');
 	}
 	
 	// ------------------------------------------------------------------------
