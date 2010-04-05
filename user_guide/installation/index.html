@@ -34,7 +34,7 @@
 					</div>
 					<div class="clear"></div>
 					<div id="title_area" class="grid_9">
-						<h4>User Guide v1.0.0 RC1</h4>
+						<h4>User Guide v1.0.0 RC3</h4>
 					</div>
 					<div class="grid_7 search_area">
 						<form method="get" action="http://www.google.com/search">
@@ -58,7 +58,7 @@
 				
 				<h1>Installation Instructions</h1>
 					
-					<p>These instructions will guide you go through the steps to install 68KB.</p>
+					<p>These instructions will guide you go through the steps to install 68KB. We also include an <a href="advanced-install.html">Advanced 5 minute install</a>.</p>
 
 					
 					<h3>Step 1.  Download and extract the files</h3>
@@ -66,38 +66,24 @@
 					
 					<h3>Step 2. Create a database</h3>
 					
-					<p>Before running the installation, a MySQL database will need to be
-					created. Most hosting companies provide a control panel that contains
-					all the tools necessary to create databases. Since different hosts
-					offer different control panels, we won't be able to provide specific
-					instructions on this task. Please read through your host's
-					documentation or contact them directly to find the location of your
-					host's control panel.</p>
+					<p>Before running the installation, a MySQL database will need to be created. Most hosting companies provide a control panel that contains all the tools necessary to create databases. Since different hosts offer different control panels, we won't be able to provide specific instructions on this task. Please read through your host's documentation or contact them directly to find the location of your host's control panel. </p>
 
-					<p>Two of the more popular control panels that hosts use are Plesk and
-					cPanel. Instructions for managing databases with Plesk are available
-					here. (<a href="http://download1.sw-soft.com/Plesk/Plesk7.5/Doc/plesk-7.5r-clients-guide-html/ch03s54.html">http://download1.sw-soft.com/Plesk/Plesk7.5/D....</a>) Instructions for managing databases with cPanel are available here (<a href="http://www.cpanel.net/docs/cpanel/">http://www.cpanel.net/docs/cpanel/</a>) (click on "MySQL Databases" in the table of contents.)</p>
+								<p>Some notes regarding database creation: </p>			
 
+								<ul>
+									<li>You will need to make up three things when creating your database - the database name, a database username and a password. Each of these three items can be pretty much anything you like - just remember to write them down! You will need them later.</li>
+
+									<li>Some hosts append your account name to your database name. For example, if you name your database 'classifieds' (without the quotes!), your host may refer to this database as 'youraccountname_classifieds'. The same thing may occur with the database username you create ('youraccountname_username'). Typically, the only thing that remains exactly the same is the password you assign.</li>
+									<li>Most control panels will review the values to use (such as 'youraccountname_classifieds') on the main database page after the database is created.</li>
+									<li>On a vast majority of hosts, the location of the database will be 'localhost'. You can verify this on the main database page after the database is created. If your host does not use 'localhost' for the location of their database, they will provide a location you should use instead. It may look like 'mysql723.yourhost.com'</li>
+								</ul>
 					
-					<p>Some notes regarding database creation:</p> <ul><li>You will need to make up three things when creating your database -
-					the database name, a database username and a password. Each of these
-					three items can be pretty much anything you like - just remember to
-					write them down! You will need them later.</li><li>Some hosts append your account name to your database name. For
-					example, if you name your database 'kb' (without the quotes!),
-					your host may refer to this database as 'youraccountname_kb'.
-					The same thing may occur with the database username you create
-					('youraccountname_username'). Typically, the only thing that remains
-					exactly the same is the password you assign.</li><li>Most control panels will review the values to use (such as
-					'youraccountname_kb') on the main database page after the
-					database is created.</li><li>On a vast majority of hosts, the location of the database will be
-					'localhost'. You can verify this on the main database page after the
-					database is created.</li></ul>
 					
 					<h3>Step 3. Insert your database details</h3>
 					<p>Once you have extracted the files you should open the folder <dfn>"upload/includes"</dfn>.  In this you will find <dfn>config.default.php</dfn>. 
 						You should rename this to <dfn>config.php</dfn> and then open it in a Text Editor.</p>
 
-					<p>Once you file the open change the section that looks like the one below:</p>
+					<p>Once you have the file open change the section that looks like the one below:</p>
 					
 					<code>
 						$db['default']['hostname'] = "localhost";	// Database Hostname<br />
@@ -111,7 +97,26 @@
 					<p>All of the values you need for these fields are given to you in step 2.</p>
 					
 					<h3>Step 4. Upload the files</h3>
-					<p>You should now FTP into your site and upload all the contents of the <dfn>'upload'</dfn> folder.  After they finish uploading CHMOD the <dfn>'uploads'</dfn> directory to 777 or read, write, execute all. (notice it is plural)</p>
+					
+					<p>We'll use a method called 'ftp' (FTP = File Transfer Protocol) to transfer files from your computer to your host's server. You'll need an FTP application in order to complete this process. Some popular FTP programs are: </p>
+					
+					<ul>
+						<li>Transmit (<a href="http://www.panic.com/transmit/" class="urlextern" title="http://panic.com">http://www.panic.com</a>)</li>
+						<li>SmartFTP (<a href="http://www.smartftp.com" class="urlextern" title="http://www.smartftp.com">http://www.smartftp.com</a>)</li>
+						<li>CuteFTP (<a href="http://www.cuteftp.com" class="urlextern" title="http://www.cuteftp.com">http://www.cuteftp.com</a>)</li>
+						<li>FileZilla (<a href="http://filezilla.sourceforge.net/" class="urlextern" title="http://filezilla.sourceforge.net/">http://filezilla.sourceforge.net/</a>)</li>
+					</ul>
+
+					<p class="important"><strong>Please note:</strong> It's very important that ALL your files are uploaded to the server in order for your site to work properly. Some people have had problems using Windows Explorer for FTP'ing their files. More advanced FTP programs will actually report which files were not successfully uploaded. Each of the FTP programs mentioned above should be fine.</p>
+					
+					
+					<h3 name="chmod_the_folders">CHMOD the folders</h3>
+
+					<p>CHMOD is a command that stands for 'CHange MODe' and is used on *nix computers (Linux, Unix, etc) to set the permissions of files and folders. We need to change the permissions on the following folders to read, write and execute or (777): </p>
+
+					<ul>
+						<li>uploads/</li>
+					</ul>
 
 					
 					<h3>Step 5. Run the install</h3>

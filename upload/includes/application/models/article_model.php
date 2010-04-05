@@ -565,13 +565,12 @@ class Article_model extends model
 			foreach ($query->result() as $row)
 			{
 				$pos = strpos(strtolower($content), strtolower($row->g_term));
-				if ($pos !== false) 
+				if ($pos !== FALSE) 
 				{
-					$sDef=$this->_dot($row->g_definition,75);
-					$sDef=str_replace('"', '\'', $sDef);
+					$sDef = $this->_dot($row->g_definition,75);
+					$sDef = str_replace('"', '\'', $sDef);
 					$replacement = ' <a href="'.site_url('glossary/term/'.$row->g_term).'" class="tooltip" title="'.$row->g_term.' - '.$sDef.'">'.$row->g_term.'</a> ';
-					
-					$content = preg_replace('/[\b|\s]('.$row->g_term.')[\b|^\s]/', $replacement, $content, 1);
+					$content = preg_replace('/[\b|\s]('.$row->g_term.')[\b|^\s]/i', $replacement, $content, 1);
 				}
 			}
 		}

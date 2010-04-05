@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US" xml:lang="en-US">
 	<head profile="http://gmpg.org/xfn/11">
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-		<title>Troubleshooting : 68KB User Guide</title>
+		<title>Installation : 68KB User Guide</title>
 		<link href="../css/style.css" rel="stylesheet" type="text/css" media="all" />
 		<script type="text/javascript" src="../js/jquery.min.js"></script>
 		<script type="text/javascript" src="../js/main.js"></script>
@@ -53,29 +53,24 @@
 				<div id="breadcrumb">
 					<a href="http://68kb.com/">68KB Home</a>  &rarr; 
 					<a href="../index.html">User Guide Home</a>   &rarr; 
-					Troubleshooting
+					Advanced Installation
 				</div>
 				
-				<h1>Troubleshooting</h1>
+				<h1>Advanced Installation</h1>
 					
-					<p>If you find that no matter what you put in your URL only your default page is loading, it might be that your server does not support the PATH_INFO variable needed to serve search-engine friendly URLs. As a first step, open your application/config/config.php file and look for the URI Protocol information. It will recommend that you try a couple alternate settings. If it still doesn't work after you've tried this you'll need to force 68KB to add a question mark to your URLs. To do this open your includes/config.php file and change this:</p>
-
+					<p>The famous 5 minute install of 68KB.</p>
 					
-					<code>$config['index_page'] = "index.php";</code>
-
-					<p>To this:</p>
-
-					<code>$config['index_page'] = "index.php?";</code>
+					<ol>
+						<li>Create a database</li>
+						<li>Rename upload/includes/config.default.php to config.php.</li>
+						<li>Edit the database details in that file.</li>
+						<li>Upload all the files</li>
+						<li>CHMOD 'uploads' to 777</li>
+						<li>Visit yoursite.com/index.php/setup/ and follow directions.</li>
+					</ol>
 					
-					<h2>Base Url</h2>
-					<p>If the script is having trouble displaying any pages you may need to edit the <dfn>includes/config.php</dfn> and replace the base url: </p>
-
-					<code>$config['base_url'] = "http://".$_SERVER['HTTP_HOST'];<br />
-					$config['base_url'] .= preg_replace('@/+$@','',dirname($_SERVER['SCRIPT_NAME'])).'/';
-					</code>
-					<p>To:</p>
-					<code>$config['base_url'] = 'http://example.com';</code>
-
+					<p class="important">After you run the install <strong>PLEASE DELETE</strong> THE <dfn>includes/application/controllers/setup DIRECTORY</dfn>.</p>
+					
 
 			</div>
 			<div class="clear"></div>

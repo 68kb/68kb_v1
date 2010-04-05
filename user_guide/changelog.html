@@ -34,7 +34,7 @@
 					</div>
 					<div class="clear"></div>
 					<div id="title_area" class="grid_9">
-						<h4>User Guide v1.0.0 RC1</h4>
+						<h4>User Guide v1.0.0 RC3</h4>
 					</div>
 					<div class="grid_7 search_area">
 						<form method="get" action="http://www.google.com/search">
@@ -57,6 +57,36 @@
 				</div>
 				
 				<h1>68KB Change Log</h1>
+					
+					<h2>Version 1.0.0 RC3</h2>
+					
+					<p>Release Date: This version was released on December 04, 2009. <br />
+					SVN Revision: 143</p>
+					
+					<h3>Bug Fixes</h3>
+						<ul>
+							<li>Fixed issue with user groups</li>
+							<li>Forced the db to change all users to user group of 1 or administrators. </li>
+						</ul>
+						
+					<h3>Changes:</h3>
+						<ul>
+							<li>New install / upgrade routine. Uses migrations</li>
+							<li>New frontend template.</li>
+							<li>Lots of code cleanup.</li>
+							<li>Moved modules and plugins to includes/extensions directory.</li>
+							<li>Added modules_on to config file.</li>
+						</ul>
+<pre>/*
+|--------------------------------------------------------------------------
+| Modules
+|--------------------------------------------------------------------------
+|
+| This allows you to enable/disable modules from the config file
+|
+*/
+$config['modules_on'] = TRUE;
+</pre>
 					
 					<h2>Version 1.0.0 RC2</h2>
 

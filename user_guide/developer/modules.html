@@ -39,7 +39,7 @@
 					</div>
 					<div class="clear"></div>
 					<div id="title_area" class="grid_9">
-						<h4>User Guide v1.0.0 RC1</h4>
+						<h4>User Guide v1.0.0 RC3</h4>
 					</div>
 					<div class="grid_7 search_area">
 						<form method="get" action="http://www.google.com/search">
@@ -58,117 +58,38 @@
 				<div id="breadcrumb">
 					<a href="http://68kb.com/">68KB Home</a>  &rarr; 
 					<a href="../index.html">User Guide Home</a>   &rarr; 
-					Caching
+					Modules &amp; Plugins
 				</div>
 				
-				<h1>Modules</h1>
-					
-					<p>Modules allow to create extra functionality that does not touch the core files of 68KB. Thus enabling your module to not get overwritten during upgrades.</p>
-
-					
-					<h3>Module Requirements</h3>
-					
-					<ol>
-						<li>Each module must be contained in a single directory.</li>
-						<li>Each module must have a config.php file that includes needed information.</li>
-						<li>The users should be able to activate and use the module from the “Modules” menu in the administrative. Optimally, a module should not require users to modify the source code.</li>
-						<li>If the module is going to interact with 68KB hook system it must contain a file named events.php</li>
-
-						<li>index.php and admin.php and used if the module has a frontend area or an administration section. These are only required if the user needs to have some of interaction with the module.</li>
-						<li>You may include any other files that the module may need to interact with.</li>
-					</ol>
-					
-					<h3>Naming Your Module</h3>
-					
-					<p>The first step is to name your module. We will be building an example developer module that you can find in the <dfn>my-modules</dfn> directory. We will name this module “developer”.</p>
-
-					
-					<p>Once we have the name of our module, we need to create a folder for it in the my-modules folder. The name of this folder should be a lowercased and space-less version of the module's name. Instead of spaces, you should either use a single word for your module or underscores. For our example, we will create a folder called “developer” that would be located like so: /my-modules/developer/.</p>
-					
-					<h3>Create a configuration file</h3>
-
-					<p>We will need to create a new php file named config.php that will reside in the <dfn>/my-modules/developer/</dfn> folder.</p>
-
-					<p>The config.php file should look like this:</p>
-
-<code>&lt;?php
-$data['module']['name'] = "developer";
-$data['module']['displayname'] = "Developer Module";
-$data['module']['description'] = "This module is used to show developers how the module system works.";
-$data['module']['version'] = "v1.0";
-</code>
-					
-					<dl>
-						<dt>name:</dt>
-						<dd>- The name is the folder name of your module.</dd>
-					</dl>
-					<dl>
-						<dt>Display Name:</dt>
-
-						<dd>- This is the title shown in the administration -> settings -> modules page.</dd>
-					</dl>
-					<dl>
-						<dt>Description:</dt>
-						<dd>- This is the description shown in the administration -> settings -> modules page.</dd>
-					</dl>
-					<dl>
-
-						<dt>Version:</dt>
-						<dd>- This is the version of the module. The version is left up to you.</dd>
-					</dl>
-					
-					<h3>Create an init.php</h3>
-
-					<p>The init.php file is a procedural php file responsible for installing items into the database and uninstalling if the user decides to remove the module. </p>
-					
-					<p>The init.php file can have three functions and they are: </p>
-
 				
-<code>install()
-upgrade()
-uninstall()
-</code>
-					
-					<p>These functions are not required if you do not need to insert or alter the database. </p>
-					
-					<p>You can see an example of this file in my-modules/developer/init.php</p>
-					
-					<p class="important">Please note the upgrade is only ran if you upload new module files with a higher version number than the one stored in the database.</p>
-					
-					<h3>Create an events.php</h3>
-					
-					<p>The events.php file is responsible for integrating functionality in the core of the script. Here is an example file: </p>
 
-<code>&lt;?php
-class developer_events
-{
-	function __construct(&$core_events)
-	{
-		$core_events->register('settings/form', $this, 'test_settings');
-		$core_events->register('settings/validation', $this, 'test_validation');
-	}
-	function test_settings()
-	{
-		$output = '
-			&lt;tr&gt;
-				&lt;td class=&quot;row1&quot;&gt;&lt;label for=&quot;testing&quot;&gt;Testing:&lt;/label&gt;&lt;/td&gt;
-				&lt;td class=&quot;row1&quot;&gt;&lt;input type=&quot;text&quot; size=&quot;50&quot; name=&quot;testing&quot; id=&quot;testing&quot; value=&quot;&#x27;. set_value(&#x27;testing&#x27;) .&#x27;&quot; /&gt;&lt;/td&gt;
+				<h1>Modules &amp; Plugins</h1>
 
-			&lt;/tr&gt;
-		';
-		return $output;
-	}
-	function test_validation()
-	{
-		$CI =& get_instance();
-		return $CI->form_validation->set_rules('max_test', 'lang:kb_max_search', 'required|numeric');
-	}
-}
-</code>
-					<p>The events.php file needs a class named <dfn>name</dfn>_<var>events</var>. The name comes from the name of your module.</p>
-						
-					<p>This code basically does two things. First in the constructor it registers the event you want and then when that hook is called it runs your method. In the example 
-						above we register the <dfn>settings/form</dfn> hook to the <var>$this->test_settings</var> method. </p>
+				<p>Modules and Plugins allow to create or include extra functionality that does not touch the core files. Thus enabling these files to not get overwritten during upgrades.</p>
+
+				<p>Modules and plugins are very similar. The main difference is that a plugin usually provides a single function, whereas a Module is usually a collection of files that extend the system.</p>
+
+				<h2>Included Plugins</h2>
+				<ul>
+					<li><a href="using-plugins.html">Using Plugins</a></li>
+
+					<li><a href="plugin-categories.html">Categories Plugin</a></li>
+					<li><a href="plugin-articles.html">Articles Plugin</a></li>
+				</ul>
+
+				<h2>Included Modules</h2>
+
+				<ul>
+					<li><a href="module-debug.html">Debug Module</a></li>
+					<li><a href="module-jwysiwyg.html">jwsiwyg Module</a></li>
+
+				</ul>
+				<h2>Building your own</h2>
+				<ul>
+					<li><a href="creating-modules.html">Creating Modules</a></li>
+					<li><a href="creating-plugins.html">Creating Plugins</a></li>
+				</ul>
+
 
 			</div>
 			<div class="clear"></div>

@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US" xml:lang="en-US">
 	<head profile="http://gmpg.org/xfn/11">
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-		<title>Troubleshooting : 68KB User Guide</title>
+		<title>Modules : 68KB User Guide</title>
 		<link href="../css/style.css" rel="stylesheet" type="text/css" media="all" />
 		<script type="text/javascript" src="../js/jquery.min.js"></script>
 		<script type="text/javascript" src="../js/main.js"></script>
@@ -53,28 +53,20 @@
 				<div id="breadcrumb">
 					<a href="http://68kb.com/">68KB Home</a>  &rarr; 
 					<a href="../index.html">User Guide Home</a>   &rarr; 
-					Troubleshooting
+					<a href="../developer/modules.html">Modules &amp; Plugins</a> &rarr; 
+					Debug Module
 				</div>
 				
-				<h1>Troubleshooting</h1>
-					
-					<p>If you find that no matter what you put in your URL only your default page is loading, it might be that your server does not support the PATH_INFO variable needed to serve search-engine friendly URLs. As a first step, open your application/config/config.php file and look for the URI Protocol information. It will recommend that you try a couple alternate settings. If it still doesn't work after you've tried this you'll need to force 68KB to add a question mark to your URLs. To do this open your includes/config.php file and change this:</p>
+			
+				<h1>Debug Module</h1>
 
-					
-					<code>$config['index_page'] = "index.php";</code>
+							<p>The debug module is designed to put your site in debug mode.</p> 
 
-					<p>To this:</p>
+							<p>What this does is turn the error reporting to the highest level possible. It also will print a lot of debugging code at the bottom of the page.</p>
 
-					<code>$config['index_page'] = "index.php?";</code>
-					
-					<h2>Base Url</h2>
-					<p>If the script is having trouble displaying any pages you may need to edit the <dfn>includes/config.php</dfn> and replace the base url: </p>
+							<p>If you are experiencing problems with the script a member of the support staff may have you turn this on to better see what is going on behind the scenes.</p>
 
-					<code>$config['base_url'] = "http://".$_SERVER['HTTP_HOST'];<br />
-					$config['base_url'] .= preg_replace('@/+$@','',dirname($_SERVER['SCRIPT_NAME'])).'/';
-					</code>
-					<p>To:</p>
-					<code>$config['base_url'] = 'http://example.com';</code>
+			
 
 
 			</div>
