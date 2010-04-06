@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="68KB" default="init-work-bench" basedir=".">
+  
+	<property name="project.package"  value="${phing.project.name}" override="true" />
+	<propertyprompt propertyName="revision" promptText="Enter the release to deploy: (example 1.0.0 'leave off the v')"/>
+	<!--<property name="revision" value="v0.0.1"/>-->
+	<property name="project.revision" value="${revision}" />
+	<property name="github.repos.dir" value="../../builds/68kb/v${project.revision}" override="true" />
+	<tstamp>
+		<format property="build.time" pattern="%m%d%Y" />
+		<format property="build.ug" pattern="%B %e, %Y" />
+	</tstamp>
+	
+	<!-- deploy the applications files to the specific environment -->
+	<target name="deploy" depends="init-work-bench, clean-files"
+		description="update the application files in a specific environment">
+		<echo message="Finished deployment." />
+	</target>
+	
+	<target name="init-work-bench" 
+		depends="-init-ad-hoc-tasks, -clone-git-repos" 
+		description="Initializes the hypothetical workbench">
+		<echo message="Finished release package." />
+	</target>
+	
+	<target name="zip"
+		description="Zip up the files">
+		<zip destfile="../../builds/ice/iclassengine_v${project.revision}.zip">
+		 <fileset dir="${github.repos.dir}">
+			 <include name="**/**" />
+		 </fileset>
+		</zip>
+	</target>
+	
+	<target name="clean-files"
+		description="Removes files not included in the release.">
+		<delete file="${github.repos.dir}/68KB/README.md" />
+		<delete file="${github.repos.dir}/68KB/upload/unit_test.php" />
+		<delete file="${github.repos.dir}/68KB/upload/includes/application/cache" />
+		<delete file="${github.repos.dir}/68KB/.gitignore" />
+		<mkdir dir="${github.repos.dir}/68KB/upload/includes/application/cache" />
+		<touch file="${github.repos.dir}/68KB/upload/includes/application/cache/index.html" />
+		
+		<delete dir="${github.repos.dir}/68KB/.git/" includeemptydirs="true" failonerror="true" />
+		<delete dir="${github.repos.dir}/68KB/do_not_upload/" includeemptydirs="true" failonerror="true" />
+		
+		<!-- Set build date -->
+		<reflexive>
+			<fileset dir="${github.repos.dir}/iclassengine/">
+				<include name="upload/includes/iclassengine/controllers/setup.php" />
+				<include name="user_guide/index.html" />
+			</fileset>
+			
+			<filterchain>
+				<replacetokens endtoken="##" begintoken="##">
+					<token key="BUILD" value="${build.time}"/>
+					<token key="UGBUILD" value="${build.ug}"/>
+					<token key="VERSION" value="${project.revision}"/>
+				</replacetokens>
+			</filterchain>
+		</reflexive>
+	</target>
+	
+	<target name="-clean-git-repos" 
+		description="Removes old repositories before initializing a new workbench">
+		<delete dir="${github.repos.dir}" includeemptydirs="true" failonerror="true" />
+	</target>
+
+	<target name="-init-ad-hoc-tasks" 
+		description="Initializes the ad hoc task(s)">
+		<adhoc-task name="github-clone"><![CDATA[
+			class Github_Clone extends Task {
+
+				private $repository = null;
+				private $destDirectory = null;
+
+				function setRepos($repository) {
+					$this->repository = $repository;
+				} 
+				function setDest($destDirectory) {
+					$this->destDirectory = $destDirectory;
+				}
+				function main() {
+					// Get project name from repos Uri
+					$projectName = str_replace('.git', '', 
+						substr(strrchr($this->repository, '/'), 1));
+
+					$gitCommand = 'git clone ' . $this->repository . ' ' . 
+						$this->destDirectory . '/' . $projectName;
+
+					exec(escapeshellcmd($gitCommand), $output, $return);
+
+					if ($return !== 0) {
+						throw new BuildException('Git clone failed');
+					}
+					$logMessage = 'Cloned Git repository ' . $this->repository . 
+						' into ' . $this->destDirectory . '/' . $projectName;
+					$this->log($logMessage);
+				}
+			}
+			]]></adhoc-task>
+		<echo message="Initialized github-clone ad hoc task." />
+	</target>
+  
+	<target name="-clone-git-repos" depends="-clean-git-repos"
+		description="Clones the needed Git repositories from GitHub">
+		<github-clone repos="git@github.com:68designs/68KB.git" 
+			dest="${github.repos.dir}" />
+	</target>
+    
+</project>
