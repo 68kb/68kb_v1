@@ -45,7 +45,7 @@ function is_post()
 			$http_host = ($_SERVER['SERVER_NAME'] ? $_SERVER['SERVER_NAME'] : $_ENV['SERVER_NAME']);
 		}
 	
-		if ($http_host AND $_SERVER['HTTP_REFERER'])
+		if ($http_host AND isset($_SERVER['HTTP_REFERER']))
 		{
 			$http_host = preg_replace('#:80$#', '', trim($http_host));
 			$referrer_parts = @parse_url($_SERVER['HTTP_REFERER']);

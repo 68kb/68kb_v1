@@ -9,7 +9,7 @@ $config['charset']   = 'utf-8';
 /* Below is for gmail  
 $config['protocol']  = 'smtp';
 $config['smtp_host'] = 'ssl://smtp.googlemail.com';
-$config['smtp_user'] = 'eric@ericlbarnes.com';
-$config['smtp_pass'] = 'tdztetow';
+$config['smtp_user'] = 'email@gmail.com';
+$config['smtp_pass'] = 'pass';
 $config['smtp_port'] = '465';
 */
