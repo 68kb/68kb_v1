@@ -10,9 +10,9 @@
 |
 */
 $db['default']['hostname'] = "localhost";	// Database Hostname
-$db['default']['username'] = "root";		// Database Username
+$db['default']['username'] = "";		// Database Username
 $db['default']['password'] = "";			// Database Password
-$db['default']['database'] = "68kb";	// Database Name
+$db['default']['database'] = "";	// Database Name
 $db['default']['dbprefix'] = "kb_";		// Database Prefix
 
 /*
@@ -64,6 +64,35 @@ $config['index_page'] = "index.php";
 
 /*
 |--------------------------------------------------------------------------
+| URI PROTOCOL
+|--------------------------------------------------------------------------
+|
+| This item determines which server global should be used to retrieve the
+| URI string.  The default setting of "AUTO" works for most servers.
+| If your links do not seem to work, try one of the other delicious flavors:
+|
+| 'AUTO'			Default - auto detects
+| 'PATH_INFO'		Uses the PATH_INFO
+| 'QUERY_STRING'	Uses the QUERY_STRING
+| 'REQUEST_URI'		Uses the REQUEST_URI
+| 'ORIG_PATH_INFO'	Uses the ORIG_PATH_INFO
+|
+*/
+$config['uri_protocol']	= "AUTO";
+
+/*
+|--------------------------------------------------------------------------
+| Enable/Disable System Hooks
+|--------------------------------------------------------------------------
+|
+| If you would like to use the "hooks" feature you must enable it by
+| setting this variable to TRUE (boolean).  See the user guide for details.
+|
+*/
+$config['enable_hooks'] = TRUE;
+
+/*
+|--------------------------------------------------------------------------
 | Modules
 |--------------------------------------------------------------------------
 |
@@ -106,7 +135,7 @@ $config['language']	= "english";
 | This determines the file types you are allowed to upload through the
 | administration.  
 */
-$config['attachment_types'] = "gif|jpg|png|zip|txt|pdf";
+$config['attachment_types'] = "pdf|txt|zip|gif|jpg|png";
 
 /*
 |--------------------------------------------------------------------------

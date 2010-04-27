@@ -278,8 +278,6 @@ class Articles extends Controller
 		$data['art'] = $this->article_model->get_article_by_id($id);
 		$data['options'] = $this->category_model->get_cats_for_select('',0, $id, TRUE);
 		$data['attach'] = $this->article_model->get_attachments($id);
-		$data['tags'] = $this->tags_model->get_article_tags($id);
-		$data['all_tags'] = $this->get_tags();
 		$data['action'] = 'modify';
 		
 		$level = $this->auth->check_level(4);
@@ -396,7 +394,6 @@ class Articles extends Controller
 		}
 		$this->load->helper(array('form', 'url'));
 		$data['options'] = $this->category_model->get_cats_for_select('',0, '', TRUE);
-		$data['all_tags'] = $this->get_tags();
 		$data['action'] = 'add';
 		
 		$this->form_validation->set_rules('article_title', 'lang:kb_title', 'required');
@@ -629,36 +626,6 @@ class Articles extends Controller
 		}
 
 		return false;
-	}
-	
-	// ------------------------------------------------------------------------
-	
-	/**
-	* Get tags from ajax.
-	* 
-	* @access	public
-	*/
-	function get_tags()
-	{
-		$this->load->model('tags_model');
-		
-		$default_tags = $this->tags_model->get_all_tags();
-		
-	    if ( ! $this->session->userdata('existing_tags')) 
-		{
-			$this->session->set_userdata('existing_tags', $default_tags);
-	    }
-
-	    $existing_tags = $this->session->userdata('existing_tags');
-		if($default_tags)
-		{
-			$tags = split(' ', $default_tags);
-		}
-	    else
-		{
-			$tags = '';
-		}
-		return $tags;
 	}
 	
 }

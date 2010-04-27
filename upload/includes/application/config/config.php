@@ -2,35 +2,6 @@
 
 include(INCPATH .'config.php');
 
-/*
-|--------------------------------------------------------------------------
-| URI PROTOCOL
-|--------------------------------------------------------------------------
-|
-| This item determines which server global should be used to retrieve the
-| URI string.  The default setting of "AUTO" works for most servers.
-| If your links do not seem to work, try one of the other delicious flavors:
-|
-| 'AUTO'			Default - auto detects
-| 'PATH_INFO'		Uses the PATH_INFO
-| 'QUERY_STRING'	Uses the QUERY_STRING
-| 'REQUEST_URI'		Uses the REQUEST_URI
-| 'ORIG_PATH_INFO'	Uses the ORIG_PATH_INFO
-|
-*/
-$config['uri_protocol']	= "AUTO";
-
-/*
-|--------------------------------------------------------------------------
-| Enable/Disable System Hooks
-|--------------------------------------------------------------------------
-|
-| If you would like to use the "hooks" feature you must enable it by
-| setting this variable to TRUE (boolean).  See the user guide for details.
-|
-*/
-$config['enable_hooks'] = TRUE;
-
 
 /*
 |--------------------------------------------------------------------------
@@ -167,6 +138,48 @@ $config['rewrite_short_tags'] = FALSE;
 */
 $config['proxy_ips'] = '';
 
+/*
+|--------------------------------------------------------------------------
+| Enable/Disable Migrations
+|--------------------------------------------------------------------------
+|
+| Migrations are disabled by default for security reasons.
+| You should enable migrations whenever you intend to do a schema migration
+| and disable it back when you're done.
+|
+| Some more severe security measures might take place in future releases.
+|
+*/
+$config["migrations_enabled"] = TRUE;
+
+/*
+|--------------------------------------------------------------------------
+| Migrations Path
+|--------------------------------------------------------------------------
+|
+| Path to your migrations folder.
+| Typically, it will be within your application path.
+| Also, writing permission is required within the migrations path.
+|
+*/
+$config["migrations_path"] = APPPATH . "migrations/";
+
+/*
+|--------------------------------------------------------------------------
+| Migrations version
+|--------------------------------------------------------------------------
+|
+| This is used to set the default migration for this code base.
+| Sometimes you want the system to automaticly migrate the database
+| to the most current migration. Or there might be higher migrations
+| that are not part of the production env. Setting the migration does
+| does nothing here. It is a way for a programer to check the config.
+|
+| On login you might want to do something like this
+| $this->migrate->version($this->config->item('migrations_version'));
+|
+*/
+$config["migrations_version"] = 0;
 
 /* End of file config.php */
-/* Location: ./upload/includes/application/config/config.php */ 
+/* Location: ./upload/includes/application/config/config.php */

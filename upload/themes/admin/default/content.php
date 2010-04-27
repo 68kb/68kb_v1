@@ -1,7 +1,7 @@
 <?php if (isset($not_allowed)): ?>
 	<?php echo lang('kb_not_allowed'); ?>
 <?php else: ?>
-<meta http-equiv="refresh" content="2;URL=<?php echo base_url();?>/index.php/<?php echo $goto; ?>" />
+<meta http-equiv="refresh" content="2;URL=<?php echo site_url($goto);?>" />
 <fieldset>
 	<legend><?php echo lang('kb_success'); ?></legend>
 	<p>
