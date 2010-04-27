@@ -19,7 +19,7 @@
     	<div class="warning"><p>Please delete the includes/application/controllers/setup folder.</p></div>
     <?php } ?>
     <?php if($settings['version'] <> $latest) { ?>
-		<div class="warning"><p>V <?php echo $latest; ?> <?php echo lang('kb_update_1'); ?> <a href="http://68kb.com/download/"><?php echo lang('kb_update_2'); ?></a>.</p></div>
+		<div class="warning"><p><?php echo $latest; ?> <?php echo lang('kb_update_1'); ?> <a href="http://68kb.com/download/"><?php echo lang('kb_update_2'); ?></a>.</p></div>
 	<?php } ?>
 	
     
@@ -33,7 +33,7 @@
 					<table width="100%"  border="0" cellspacing="3" cellpadding="3">
 						<tr>
 							<td width="25%"><?php echo lang('kb_running'); ?></td>
-							<td width="18%">v<?php echo $settings['version']; ?></td>
+							<td width="18%"><?php echo $settings['version']; ?></td>
 						</tr>
 						<tr>
 							<td><?php echo lang('kb_total_articles'); ?></td>

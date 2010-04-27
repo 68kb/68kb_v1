@@ -112,7 +112,7 @@
 </div>
 
 <div id="footer">
-	&copy; 2008 68 KB - v<?php echo $settings['version']; ?> <br />
+	&copy; 2008 - 2010 68 KB - <?php echo $settings['version']; ?> <br />
 	Time: <?=$this->benchmark->elapsed_time();?> - Memory: <?=$this->benchmark->memory_usage();?>
 </div>
 <?php $this->core_events->trigger('admin/template/footer');?>
