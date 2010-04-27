@@ -91,8 +91,7 @@ class Article extends Controller
 				$data['meta_description'] = $data['article']->article_short_desc;
 				$data['comments'] = $this->comments_model->get_article_comments($data['article']->article_id);
 				$data['comments_total'] = $this->comments_model->get_article_comments_count($data['article']->article_id);
-				$data['related'] = $this->article_model->get_related($data['article']->article_id);
-			
+				
 				$data['comment_author'] = get_cookie('kb_author', TRUE);
 				$data['comment_author_email'] = get_cookie('kb_email', TRUE);
 				
