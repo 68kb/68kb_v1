@@ -74,11 +74,11 @@ class Search extends Controller
 		    	$wherestring = "";
 		    	for ($i = 0; $i < $numkeywords; $i++)
 		    	{
-		    		if ($i > 0)
+					if ($i > 0)
 					{
-						$wherestring = mysql_real_escape_string($wherestring) . " AND ";
+						$wherestring .= " AND ";
 					}
-		    		$wherestring = $wherestring .
+					$wherestring = $wherestring .
 		    			" (article_title LIKE '%". mysql_real_escape_string($keywords[$i]) .
 		    			"%' OR article_short_desc LIKE '%" . mysql_real_escape_string($keywords[$i]) .
 		    			"%' OR article_description LIKE '%". mysql_real_escape_string($keywords[$i]) ."%') ";
