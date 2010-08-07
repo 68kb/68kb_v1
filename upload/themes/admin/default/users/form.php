@@ -43,12 +43,12 @@
 	
 	<p class="row2">
 		<label for="password"><?php echo lang('kb_password'); ?>:</label>	
-		<input type="text" name="password" id="password" class="inputtext" value="" />
+		<input type="passconf" name="password" id="password" class="inputtext" value="" />
 	</p>
 	
 	<p class="row1">
 		<label for="passconf"><?php echo lang('kb_confirmpassword'); ?>:</label>	
-		<input type="text" name="passconf" id="passconf" class="inputtext" value="" />
+		<input type="passconf" name="passconf" id="passconf" class="inputtext" value="" />
 	</p>
 	
 	
